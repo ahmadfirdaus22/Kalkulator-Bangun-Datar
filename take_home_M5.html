@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="take.js"></script>
+
+</head>
+
+<body style="background-color: lightskyblue;">
+    <div style="padding-left: 450px; padding-top: 100px;">
+    <h1>Kalkulator Bangun Datar</h1>
+    <p>Pilih bangun datar:
+        <select name="bangun_datar" id="pilihan" style="background-color: lightgray;" onchange="pilihan()">
+            <option value="">-</option>
+            <option value="Segitiga">Segitiga</option>
+            <option value="Segiempat">Segiempat</option>
+            <option value="Trapesium">Trapesium</option>
+            <option value="Jajaran-genjang">Jajaran Genjang</option>
+            <option value="Lingkaran">Lingkaran</option>
+        </select>
+    </p>
+    <div id="segitiga" style="display: none;">
+        <table>
+            <tr>
+                <td>Alas</td>
+                <td>:</td>
+                <td><input type="number" min="1" min="1" id="ss1">cm</td>
+            </tr>
+            <tr>
+                <td>Tinggi</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="ss2">cm</td>
+            </tr>
+            <tr>
+                <td>Miring</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="ss3">cm</td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <div id="segiempat" style="display: none;">
+        <table>
+            <tr>
+                <td>Panjang</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="p">cm</td>
+            </tr>
+            <tr>
+                <td>Lebar</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="l">cm</td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <div id="trapesium" style="display: none;">
+        <table>
+            <tr>
+                <td>Sisi atas</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="st1">cm</td>
+            </tr>
+            <tr>
+                <td>Sisi bawah</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="st2">cm</td>
+            </tr>
+            <tr>
+                <td>Sisi miring</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="st3">cm</td>
+            </tr>
+            <tr>
+                <td>Tinggi</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="st4">cm</td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <div id="jajargenjang" style="display: none;">
+        <table>
+            <tr>
+                <td>Alas</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="a">cm</td>
+            </tr>
+            <tr>
+                <td>Tinggi</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="t">cm</td>
+            </tr>
+            <tr>
+                <td>Miring</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="m"></td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <div id="lingkaran" style="display: none;">
+        <table>
+            <tr>
+                <td>Jari-jari</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="j">cm</td>
+            </tr>
+        </table>
+        <br>
+    </div>
+
+    <input type="submit" value="HITUNG" onclick="hasil()" >
+    <div id="segitiga_hasil" style="display: none;">
+        <table>
+            <tr>
+                <td>Luas</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="luas_segitiga">cm<sup>2</sup></td>
+            </tr>
+            <tr>
+                <td>Keliling</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="keliling_segitiga">cm</td>
+            </tr>
+        </table>
+        <img src="../Take Home/gambar/segitiga.png" id="gambar_s3" >
+    </div>
+    <div id="segiempat_hasil" style="display: none;">
+        <table>
+            <tr>
+                <td>Luas</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="luas_segiempat">cm<sup>2</sup></td>
+            </tr>
+            <tr>
+                <td>Keliling</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="keliling_segiempat">cm</td>
+            </tr>
+        </table>
+        <img src="../Take Home/gambar/persegi.png" id="gambar_s4" >
+
+    </div>
+    <div id="trapesium_hasil" style="display: none;">
+        <table>
+            <tr>
+                <td>Luas</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="luas_trapesium">cm<sup>2</sup></td>
+            </tr>
+            <tr>
+                <td>Keliling</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="keliling_trapesium">cm</td>
+            </tr>
+        </table>
+        <img src="../Take Home/gambar/trapesium.png" id="gambar_t" >
+
+    </div>
+    <div id="jajargenjang_hasil" style="display: none;">
+        <table>
+            <tr>
+                <td>Luas</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="luas_jajargenjang">cm<sup>2</sup></td>
+            </tr>
+            <tr>
+                <td>Keliling</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="keliling_jajargenjang">cm</td>
+            </tr>
+        </table>
+        <img src="../Take Home/gambar/jajargenjang.png" id="gambar_j" >
+    </div>
+    <div id="lingkaran_hasil" style="display: none;">
+        <table>
+            <tr>
+                <td>Luas</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="luas_lingkaran">cm<sup>2</sup></td>
+            </tr>
+            <tr>
+                <td>Keliling</td>
+                <td>:</td>
+                <td><input type="number" min="1" id="keliling_lingkaran">cm</td>
+            </tr>
+        </table>
+        <img src="../Take Home/gambar/lingkaran.png" id="gambar_l" >
+    </div>
+    </div>
+</body>
+
+</html>
